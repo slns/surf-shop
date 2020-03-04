@@ -34,34 +34,39 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
-/* GET profile page /profile. */
+/* POST register page. */
+router.post('/register', (req, res, next) => {
+  res.send('POST -> /register');
+});
+
+/* GET profile page. */
 router.get('/profile', (req, res, next) => {
-  res.send('GET /profile');
+  res.send('GET -> /profile');
 });
 
-/* PUT profile page /profile/:user_id. */
+/* PUT profile/:user_id page. */
 router.put('/profile/:user_id', (req, res, next) => {
-  res.send('PUT /profile/:user_id');
+  res.send('PUT -> /profile/:user_id');
 });
 
-/* GET forgot-password page /forgot-password. */
+/* GET forgot page. */
 router.get('/forgot', (req, res, next) => {
-  res.send('GET /forgot');
+  res.send('GET -> /forgot');
 });
 
 /* PUT forgot page /forgot. */
 router.put('/forgot', (req, res, next) => {
-  res.send('PUT /forgot');
+  res.send('PUT -> /forgot');
 });
 
-/* GET reset page /reset/:token. */
+/* GET reset/:token page. */
 router.get('/reset/:token', (req, res, next) => {
-  res.send('GET /reset/:token');
+  res.send('GET -> /reset/:token');
 });
 
-/* PUT reset page /reset/:token. */
+/* PUT reset/:token page. */
 router.put('/reset/:token', (req, res, next) => {
-  res.send('PUT /reset/:token');
-});
+  res.send('PUT -> /reset/:token');
+})
 
 module.exports = router;
