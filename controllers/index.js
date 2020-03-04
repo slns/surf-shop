@@ -8,11 +8,7 @@ module.exports = {
             email:    req.body.email,
             image:    req.body.image
         });
-        try {
-            await User.register(newUser, req.body.password);
-            res.redirect('/');
-        } catch (error) {
-            return next(error);
-        }      
+           await User.register(newUser, req.body.password);
+        res.redirect('/');
     }
 };
