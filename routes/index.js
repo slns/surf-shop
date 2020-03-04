@@ -1,5 +1,5 @@
 const express = require('express');
-const passport = require('passport');
+//const passport = require('passport');
 const router = express.Router();
 const { postRegister, postLogin, getLogout } = require('../controllers');
 const { errorHandler } = require('../middleware');
@@ -26,8 +26,7 @@ router.get('/login', (req, res, next) => {
 router.post('/login', postLogin);
 
 /* GET Logout page /logout */
-router.get('/logout', getLogout
-});
+router.get('/logout', getLogout );
 
 /* POST register page. */
 router.post('/register', (req, res, next) => {
