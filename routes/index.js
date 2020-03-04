@@ -49,17 +49,17 @@ router.get('/forgot', (req, res, next) => {
   res.send('GET /forgot');
 });
 
-/* PUT forgot-password page /forgot-password. */
+/* PUT forgot page /forgot. */
 router.put('/forgot', (req, res, next) => {
   res.send('PUT /forgot');
 });
 
-/* GET reset-password page /reset-password/:token. */
+/* GET reset page /reset/:token. */
 router.get('/reset/:token', (req, res, next) => {
   res.send('GET /reset/:token');
 });
 
-/* PUT reset-password page /reset-password/:token. */
+/* PUT reset page /reset/:token. */
 router.put('/reset/:token', (req, res, next) => {
   res.send('PUT /reset/:token');
 });
