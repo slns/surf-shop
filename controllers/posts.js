@@ -48,7 +48,7 @@ module.exports = {
             for (const public_id of deletedImages) {
                  await cloudinary.v2.uploader.destroy(public_id);
                  for (const image of post.images) {
-                     if ( image.public_id === public_id) {
+                     if (image.public_id === public_id) {
                          let index = post.images.indexOf(image);
                          post.images.splice(index, 1);
                      }
@@ -74,7 +74,11 @@ module.exports = {
     },
 
     async postDestroy(req,res,next) {
-        await Post.findByIdAndRemove(req.params.id);
-        res.redirect('/posts');
+       let post = await Post.findByIdAndRemove(req.params.id);
+       for (const image of post.images) {
+           await await cloudinary.v2.uploader.destroy(image.public_id);
+       }
+       await post.remove();
+       res.redirect('/posts');
     }
 }
